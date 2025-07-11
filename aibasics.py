@@ -9,12 +9,12 @@ from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 
-# Example data
-X = np.random.rand(100, 1) * 10  # Features
-y = 2.5 * X.squeeze() + np.random.randn(100) * 2  # Target with noise
+
+X = np.array([[1], [2], [3], [4], [5], [6] , [7]])  # Days 1 to 4
+y = np.array([2.5, 1.5, 1.5, 3, 3, 3, 3])  # Hours used on those days
 
 # Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.99, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.43, random_state=42)
 
 # Linear Regression
 linear_model = LinearRegression()
@@ -36,6 +36,7 @@ r2_tree = r2_score(y_test, y_pred_tree)
 # Print evaluation metrics
 print("Linear Regression MSE:", mse_linear)
 print("Decision Tree Regression MSE:", mse_tree)
+print("Decision Tree Regression MSE", mse_tree)
 print("Linear Regression R^2:", r2_linear)
 print("Decision Tree Regression R^2:", r2_tree)
 
