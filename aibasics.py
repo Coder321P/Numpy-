@@ -1,6 +1,5 @@
 #scikit learn lessons and linear regration and decision trees
-import numpy as np
-import matplotlib.pyplot as plt
+import zalib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 import sklearn
@@ -21,6 +20,8 @@ linear_model = LinearRegression()
 
 linear_model.fit(X_train, y_train)
 y_pred_linear = linear_model.predict(X_test)
+
+
 
 # Decision Tree Regression
 tree_model = DecisionTreeRegressor(max_depth=5)
